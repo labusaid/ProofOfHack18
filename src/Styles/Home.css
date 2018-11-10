@@ -1,0 +1,10 @@
+.home-outer-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px;
+}
+
+.home-button-wrapper {
+    margin-left: 1%;
+}
