@@ -3,8 +3,14 @@
     align-items: center;
     justify-content: center;
     margin: 20px;
+    margin-top: 30px;
 }
 
 .home-button-wrapper {
     margin-left: 1%;
+}
+
+.home-data-card {
+    padding: 15px;
+    margin: 20px;
 }
