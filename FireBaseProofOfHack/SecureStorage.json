@@ -1,0 +1,94 @@
+[
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "id",
+				"type": "string"
+			},
+			{
+				"name": "price",
+				"type": "uint256"
+			}
+		],
+		"name": "addSellableData",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_data_id",
+				"type": "string"
+			},
+			{
+				"name": "encryption_public_key",
+				"type": "string"
+			}
+		],
+		"name": "createUserAccess",
+		"outputs": [],
+		"payable": true,
+		"stateMutability": "payable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "userAddress",
+				"type": "address"
+			},
+			{
+				"name": "ipfsStoredURL",
+				"type": "string"
+			}
+		],
+		"name": "setIPFSAddress",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "userAddress",
+				"type": "address"
+			}
+		],
+		"name": "getIPFSAddress",
+		"outputs": [
+			{
+				"name": "",
+				"type": "string"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "_data_id",
+				"type": "string"
+			}
+		],
+		"name": "getSellableData",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	}
+]
