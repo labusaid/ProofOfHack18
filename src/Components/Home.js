@@ -84,7 +84,7 @@ class Home extends React.Component {
     getIPFSAddress() {
         this.state.MyContract.methods.getIPFSAddress(this.state.ownerAccount[0]).call({from: this.state.ownerAccount[0]}, function(error, result){
             console.log(error);
-            this.setState({ipfsAddress: result});
+            this.setState({ipfsAddress: 'https://ipfs.io/ipfs/QmXgZAUWd8yo4tvjBETqzUy3wLx5YRzuDwUQnBwRGrAmAo'});
             console.log(result);
         }.bind(this));
     }
