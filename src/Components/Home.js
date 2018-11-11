@@ -12,12 +12,17 @@ class Home extends React.Component {
         key: '', 
         ownerAccount: '',
         contractAddress: '0xAd12c3776fdda9a04985d418B7A321a26AFBc521',
+        keyValue: '',
         web3: {},
         MyContract: {},
     };
     this.handleClick = this.handleClick.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.addSellableData = this.addSellableData.bind(this);
+    this.getSellableData = this.getSellableData.bind(this);
+    this.createUserAccess = this.createUserAccess.bind(this);
+    this.setIPFSAddress = this.setIPFSAddress.bind(this);
+    this.getIPFSAddress = this.getIPFSAddress.bind(this);
   }
 
   async componentDidMount () { 
@@ -52,28 +57,30 @@ class Home extends React.Component {
     }
 
     createUserAccess() {
-        this.MyContract.methods.createUserAccess("a", "key").send({from: this.state.ownerAccount[0], value: 100}, function(error, result){
+        let id = "a";
+        
+        this.state.MyContract.methods.createUserAccess("a", this.state.keyValue).send({from: this.state.ownerAccount[0], value: 100}, function(error, result){
             console.log(error);
             console.log(result);
         });
     }
 
     getSellableData() {
-        this.MyContract.methods.getSellableData("a").call({from: this.state.ownerAccount[0]}, function(error, result){
+        this.state.MyContract.methods.getSellableData("a").call({from: this.state.ownerAccount[0]}, function(error, result){
             console.log(error);
             console.log(result);
         });
     }
 
     setIPFSAddress() {
-        this.MyContract.methods.setIPFSAddress(this.state.ownerAccount[0], "www.ipfs/hash").send({from: this.state.ownerAccount[0]}, function(error, result){
+        this.state.MyContract.methods.setIPFSAddress(this.state.ownerAccount[0], "www.ipfs/hash").send({from: this.state.ownerAccount[0]}, function(error, result){
             console.log(error);
             console.log(result);
         });
     }
 
     getIPFSAddress() {
-        this.MyContract.methods.getIPFSAddress(this.state.ownerAccount[0]).call({from: this.state.ownerAccount[0]}, function(error, result){
+        this.state.MyContract.methods.getIPFSAddress(this.state.ownerAccount[0]).call({from: this.state.ownerAccount[0]}, function(error, result){
             console.log(error);
             console.log(result);
         });
@@ -83,8 +90,8 @@ class Home extends React.Component {
    //this.setState({ togglePaymentIntput: !this.state.togglePaymentIntput });
   }
 
-  handleChange() {
-
+  handleChange(event) {
+    this.setState({keyValue: event.target.value})
   }
 
   render() {
@@ -94,13 +101,13 @@ class Home extends React.Component {
           id="outlined-name"
           label="Encryption Key"
           className="change"
-          value={this.state.key}
-          onChange={this.handleChange()}
+          value={this.state.keyValue}
+          onChange={this.handleChange}
           margin="normal"
           variant="outlined"
         />
         <div className="home-button-wrapper"> 
-            <Button variant="contained" color="primary" onClick={this.addSellableData}>
+            <Button variant="contained" color="primary" onClick={this.createUserAccess}>
                 Primary
             </Button>
         </div>
