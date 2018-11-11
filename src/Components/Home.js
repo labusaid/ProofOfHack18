@@ -9,6 +9,13 @@ import Styles from '../Styles/Home.css';
 
 var Web3 = require('web3');
 class Home extends React.Component {
+    getRandom() {
+        var rand = 1 + Math.random() * (10 - 1);
+        rand = rand.toFixed(2);
+        var rannumstate = rand + "Wei";
+      
+        return rannumstate;
+      }
   constructor(prop) {
     super(prop);
     this.state = {
@@ -27,9 +34,11 @@ class Home extends React.Component {
     this.createUserAccess = this.createUserAccess.bind(this);
     this.setIPFSAddress = this.setIPFSAddress.bind(this);
     this.getIPFSAddress = this.getIPFSAddress.bind(this);
+    this.getRandom = this.getRandom.bind(this);
   }
 
   async componentDidMount () { 
+      
         if (window.ethereum) {
             var web3 = new Web3(window.ethereum);
             this.setState({ web3: web3 })
@@ -107,7 +116,7 @@ class Home extends React.Component {
                         <Typography> 
                         Labled Cat images (Rare)
                         </Typography>
-                        Price: 100 Wei
+                        <span>{this.getRandom()}</span>
                     </Card>
                 </div>
                 <TextField
@@ -126,12 +135,12 @@ class Home extends React.Component {
                 </div>
             
             </div>
-            {/* <div className="home-second-button-wrapper"> 
+            <div className="home-second-button-wrapper"> 
                 <Button variant="contained" color="primary" onClick={this.getIPFSAddress}>
                         Get Address
                 </Button>
             </div>
-                {this.state.ipfsAddress} */}
+                {this.state.ipfsAddress}
       </div>
     );
   }

@@ -35,7 +35,7 @@ function HomeButton(props) {
   const { classes } = props;
   return (
     <div className={classes.root}  className="has-text-left is-fixed-top">
-      <Button variant="outlined" className={classes.button}>
+      <Button variant="outlined" className="home-button">
         Home
       </Button>
     </div>

@@ -33,7 +33,7 @@ class App extends Component {
 function Landing(){
   return(
     <div>
-      <h1 className="title is-1">Datahash</h1>
+      <h1 className="title is-1">| DataHash |</h1>
       <h1 className="subtitle is-4">Data Security and Monotezation</h1>
       <Link to="/crowdsource"><CrowdsourceButton/></Link>
       <Link to="/enterprise"><EnterpriseButton/></Link>
