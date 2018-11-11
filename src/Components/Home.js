@@ -4,6 +4,7 @@ import TextField from '@material-ui/core/TextField';
 import Card from '@material-ui/core/Card';
 import Typography from '@material-ui/core/Typography';
 import Abi from '../SecureStorage.json';
+
 import Styles from '../Styles/Home.css';
 
 var Web3 = require('web3');
@@ -102,28 +103,27 @@ class Home extends React.Component {
         <div>
             <div className="home-outer-wrapper">
             <div >
-                <Card className="home-data-card">
-                    <Typography> 
-                    Labled Cat images (Rare)
-                    </Typography>
-                    Price: 100 Wei
-                </Card>
-            </div>
-            <TextField
-            id="outlined-name"
-            label="Encryption Key"
-            className="change"
-            value={this.state.keyValue}
-            onChange={this.handleChange}
-            margin="normal"
-            variant="outlined"
-            />
-            <div className="home-button-wrapper"> 
-                <Button variant="contained" color="primary" onClick={this.createUserAccess}>
-                    Purchase Data
-                </Button>
-            </div>
-            
+                    <Card className="home-data-card">
+                        <Typography> 
+                        Labled Cat images (Rare)
+                        </Typography>
+                        Price: 100 Wei
+                    </Card>
+                </div>
+                <TextField
+                id="outlined-name"
+                label="Encryption Key"
+                className="change"
+                value={this.state.keyValue}
+                onChange={this.handleChange}
+                margin="normal"
+                variant="outlined"
+                />
+                <div className="home-button-wrapper"> 
+                    <Button variant="contained" color="primary" onClick={this.createUserAccess}>
+                        Purchase Data
+                    </Button>
+                </div>
             
             </div>
             <div className="home-second-button-wrapper"> 
