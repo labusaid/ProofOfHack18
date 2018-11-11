@@ -15,6 +15,7 @@ class Home extends React.Component {
         keyValue: '',
         web3: {},
         MyContract: {},
+        ipfsAddress: '',
     };
     this.handleClick = this.handleClick.bind(this);
     this.handleChange = this.handleChange.bind(this);
@@ -58,7 +59,6 @@ class Home extends React.Component {
 
     createUserAccess() {
         let id = "a";
-        
         this.state.MyContract.methods.createUserAccess("a", this.state.keyValue).send({from: this.state.ownerAccount[0], value: 100}, function(error, result){
             console.log(error);
             console.log(result);
@@ -82,8 +82,9 @@ class Home extends React.Component {
     getIPFSAddress() {
         this.state.MyContract.methods.getIPFSAddress(this.state.ownerAccount[0]).call({from: this.state.ownerAccount[0]}, function(error, result){
             console.log(error);
+            this.setState({ipfsAddress: result});
             console.log(result);
-        });
+        }.bind(this));
     }
 
   handleClick() {
@@ -96,7 +97,8 @@ class Home extends React.Component {
 
   render() {
     return (
-      <div className="home-outer-wrapper">
+        <div>
+        <div className="home-outer-wrapper">
         <TextField
           id="outlined-name"
           label="Encryption Key"
@@ -108,9 +110,18 @@ class Home extends React.Component {
         />
         <div className="home-button-wrapper"> 
             <Button variant="contained" color="primary" onClick={this.createUserAccess}>
-                Primary
+                Purchase Data
             </Button>
         </div>
+        
+        
+        </div>
+        <div className="home-second-button-wrapper"> 
+            <Button variant="contained" color="primary" onClick={this.getIPFSAddress}>
+                    Get Address
+            </Button>
+        </div>
+            {this.state.ipfsAddress}
       </div>
     );
   }
