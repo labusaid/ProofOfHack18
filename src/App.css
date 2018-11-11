@@ -1,5 +1,18 @@
+html {
+  height: 100%;
+}
+
+.home-outer-wrapper {
+  display: flex;
+  padding: 6em 0em;
+  align-items: center;
+  justify-content: center;
+}
+
 .App {
-  text-align: center;
+  background-color: #ffffff;
+  box-shadow: inset 0em 0em 10em 0em #00000033;
+  height: 100%;
 }
 
 .App-logo {
@@ -29,4 +42,50 @@
 
 .home-data-card {
   padding: 20px;
+}
+
+.MuiButton-containedPrimary-27 {
+  color: #000;
+  background-color: #ff7043 !important;
+  text-decoration: unset !important;
+  border-radius: 4em;
+  width: 12em;
+}
+
+SITE-BUTTONS {
+  color: #fff;
+  background-color: #f94b4b !important;
+  width: 12em;
+  margin: 0em 0em 1em 0em !important;
+}
+
+span.MuiButton-label-16 {
+  color: black;
+  text-decoration: none !important;
+}
+
+a {
+  text-decoration: none;
+}
+
+.text-fields-crowd {
+  display: flex;
+  max-height: 4em;
+  text-align: center;
+  width: max-content;
+  margin: 0 auto;
+}
+
+button.MuiButtonBase-root-29.MuiButton-root-3.MuiButton-contained-14.MuiButton-containedPrimary-15.MuiButton-raised-17.MuiButton-raisedPrimary-18.SITE-BUTTONS {
+  color: #fff;
+  background-color: #f94b4b !important;
+  width: 12em;
+  margin: 0em 0em 1em 0em !important;
+}
+
+button.MuiButtonBase-root-29.MuiButton-root-3.MuiButton-contained-14.MuiButton-containedPrimary-15.MuiButton-raised-17.MuiButton-raisedPrimary-18.CrowdsourceButton-button-1 {
+  color: #fff;
+  background-color: #f94b4b !important;
+  width: 12em;
+  margin: 0em 0em 1em 0em !important;
 }

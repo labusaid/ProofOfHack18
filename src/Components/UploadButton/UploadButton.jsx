@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
-import AddIcon from '@material-ui/icons/Add';
+import CloudUploadIcon from '@material-ui/icons/CloudUpload';
 
 const styles = theme => ({
   button: {
@@ -17,8 +17,8 @@ function FloatingActionButtons(props) {
   const { classes } = props;
   return (
     <div>
-      <Button variant="fab" color="primary" aria-label="Add" className={classes.button}>
-        <AddIcon />
+      <Button variant="fab" id="upload-button" color="primary" aria-label="Add" href="" className={classes.button}>
+      <CloudUploadIcon className={classes.rightIcon} />
       </Button>
     </div>
   );

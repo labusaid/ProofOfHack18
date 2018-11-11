@@ -4,19 +4,13 @@ import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 
 const styles = theme => ({
-  button: {
-    margin: theme.spacing.unit,
-  },
-  input: {
-    display: 'none',
-  },
 });
 
 function EnterpriseButton(props) {
   const { classes } = props;
   return (
     <div>
-      <Button variant="contained" color="primary" className={classes.button}>
+      <Button variant="contained" color="primary" className="SITE-BUTTONS">
         Enterprise
       </Button>
     </div>

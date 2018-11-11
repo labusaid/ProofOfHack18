@@ -126,12 +126,12 @@ class Home extends React.Component {
                 </div>
             
             </div>
-            <div className="home-second-button-wrapper"> 
+            {/* <div className="home-second-button-wrapper"> 
                 <Button variant="contained" color="primary" onClick={this.getIPFSAddress}>
                         Get Address
                 </Button>
             </div>
-                {this.state.ipfsAddress}
+                {this.state.ipfsAddress} */}
       </div>
     );
   }
